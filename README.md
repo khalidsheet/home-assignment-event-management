@@ -31,8 +31,13 @@ npm run lint
 ### Tools
 
 - VueJS
-- Vuex (State Management)
 
 ### UI Libraries
 
 - VueCal
+- TailwindCSS
+- Vuetify
+
+### Store
+
+- Vuex (State Management)
