@@ -6,19 +6,28 @@ export const appStore = createStore({
   state() {
     return {
       events: [],
+      searchTerm: '',
     }
   },
   mutations: {
     addEvent(state, event) {
-      state.events.push(event)
+      const id = Math.random().toString(36).substring(7)
+      state.events.push({
+        ...event,
+        id,
+        class: event.status.toLowerCase(),
+      })
     },
-    editEvent(state, { index, event }) {
-      state.events[index] = event
+    editEvent(_, { id, event }) {
+      this.commit('deleteEvent', id)
+      this.commit('addEvent', event)
     },
-    deleteEvent(state, index) {
-      state.events.splice(index, 1)
+    deleteEvent(state, id) {
+      state.events = state.events.filter(event => event.id !== id)
     },
-
+    updateSearchTerm(state, searchTerm) {
+      state.searchTerm = searchTerm
+    },
     initStore(state) {
       const store = localStorage.getItem('calendar')
       if (store) {
