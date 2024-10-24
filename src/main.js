@@ -1,7 +1,21 @@
 // Vuetify
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
+import {
+  VForm,
+  VTextField,
+  VTextarea,
+  VRow,
+  VCol,
+  VCard,
+  VSelect,
+  VSpacer,
+  VCardText,
+  VBtn,
+  VCardActions,
+  VDialog,
+  VSnackbar,
+} from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import { VDateInput } from 'vuetify/labs/VDateInput'
 
@@ -14,7 +28,19 @@ import './assets/main.css'
 const vuetify = createVuetify({
   components: {
     VDateInput,
-    ...components,
+    VForm,
+    VTextField,
+    VTextarea,
+    VRow,
+    VCol,
+    VCard,
+    VSelect,
+    VSpacer,
+    VCardText,
+    VBtn,
+    VCardActions,
+    VDialog,
+    VSnackbar,
   },
   directives,
 })
